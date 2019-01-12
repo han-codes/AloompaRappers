@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreData
+
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
 class MainVC: UIViewController {
     
@@ -65,6 +68,7 @@ class MainVC: UIViewController {
             }
         }.resume()
     }
+    
     
     
     
