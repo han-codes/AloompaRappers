@@ -14,19 +14,17 @@ class DetailVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionLbl: UILabel!
     
-    var rapper: Rapper!
+    var artist: Artist!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Selected Artist"
         
-        print("RAPPER DETAILVC: \(rapper)")
+        print("RAPPER DETAILVC: \(artist)")
 
-        artistNameLbl.text = rapper.name
-        descriptionLbl.text = rapper.description
-        guard let url = URL(string: rapper.image) else { return }
-        
-        print("URL: \(url)")
+        artistNameLbl.text = artist.artistName
+        descriptionLbl.text = artist.artistDescription
+        guard let url = URL(string: artist.image!) else { return }
         
         do {
             DispatchQueue.global().async {

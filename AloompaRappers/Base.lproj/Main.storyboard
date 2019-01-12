@@ -56,7 +56,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="rapperImage" destination="MXh-Jj-Y2a" id="RSt-op-GRi"/>
-                                            <outlet property="rapperNamLbl" destination="O9e-Iy-Eta" id="0fg-ja-TtK"/>
+                                            <outlet property="rapperNameLbl" destination="O9e-Iy-Eta" id="7AE-0k-FLv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

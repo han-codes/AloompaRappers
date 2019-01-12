@@ -9,32 +9,22 @@
 import UIKit
 
 class RapperCell: UITableViewCell {
-    @IBOutlet weak var rapperNamLbl: UILabel!
+    @IBOutlet weak var rapperNameLbl: UILabel!
     @IBOutlet weak var rapperImage: UIImageView!
-    
-    private var rapper: Rapper!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        super.setSelected(selected, animated: animated)        
     }
     
-    func configureCell(rapper: Rapper) {
-        self.rapper = rapper
+    func configureCell(artist: Artist) {
+        self.rapperNameLbl.text = artist.artistName
+        guard let artistImage = artist.image else { return }
         
-        rapperNamLbl.text = rapper.name
-        print("NAME: \(rapper.name)")
-        
-        guard let url = URL(string: rapper.image) else { return }
-
-        print("URL: \(url)")
+        guard let url = URL(string: artistImage) else { return }
         
         do {
             DispatchQueue.global().async {
@@ -44,17 +34,9 @@ class RapperCell: UITableViewCell {
                     }
                 }
             }
-            
         } catch {
             print("Failed to get data from url")
         }
         
-        
-//                let data = try? Data(contentsOf: url)
-        //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        
-//        UIImage(data: <#T##Data#>)
-//        UIImage(contentsOfFile: <#T##String#>)
-//        rapperImage.image = UIImage(named: rapper.image)
     }
 }
