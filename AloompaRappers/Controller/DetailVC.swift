@@ -21,10 +21,7 @@ class DetailVC: UIViewController {
         navigationItem.title = "Selected Artist"
         
         print("RAPPER DETAILVC: \(rapper)")
-//        artistNameLbl.text = rapper.first?.name
-//        descriptionLbl.text = rapper.first?.description
-//        guard let url = URL(string: rapper.first!.image) else { return }
-        
+
         artistNameLbl.text = rapper.name
         descriptionLbl.text = rapper.description
         guard let url = URL(string: rapper.image) else { return }

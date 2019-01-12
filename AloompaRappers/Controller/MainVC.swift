@@ -26,6 +26,11 @@ class MainVC: UIViewController {
         parseJSON()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        tableView.estimatedRowHeight = 120
+//        tableView.rowHeight = UITableView.automaticDimension
+//    }
+    
     func parseJSON() {
         
         let jsonUrlString = "http://assets.aloompa.com.s3.amazonaws.com/rappers/rappers.json"
