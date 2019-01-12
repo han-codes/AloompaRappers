@@ -17,6 +17,7 @@ class MainVC: UIViewController {
     
     var rappers = [Rapper]()
     var passedRapper: Rapper?
+    var artists = [Artist]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +27,13 @@ class MainVC: UIViewController {
         
         navigationItem.title = "Select an Artist"
         
+        fetch()
         parseJSON()
+//        save(rapper: rappers)
+//        if artists.count <= 0 {
+//            save(rapper: rappers)
+//        }
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        tableView.estimatedRowHeight = 120
-//        tableView.rowHeight = UITableView.automaticDimension
-//    }
     
     func parseJSON() {
         
@@ -54,9 +55,14 @@ class MainVC: UIViewController {
                     let websiteDescription = try JSONDecoder().decode(WebDescription.self, from: data)
                     print(websiteDescription.artists)
                     
-                    
                     for i in 0 ... websiteDescription.artists.count - 1 {
                         self.rappers.append(websiteDescription.artists[i])
+                        if self.artists.count <= 0 {
+                            self.save(rapper: websiteDescription.artists[i])
+                            print("ARTIST COUNT: \(self.artists.count)")
+                        } else {
+                            print("🤬 ARTISTS IS NOT EMPTY, SO DON'T SAVE")
+                        }
                     }
                     self.tableView.reloadData()
                     
@@ -69,7 +75,36 @@ class MainVC: UIViewController {
         }.resume()
     }
     
+    func save(rapper: Rapper) {
+        
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let artist = Artist(context: managedContext)
+        artist.id = rapper.id
+        artist.artistName = rapper.name
+        artist.artistDescription = rapper.description
+        artist.image = rapper.image
+        
+        do {
+            try managedContext.save()
+            print("🙌🏻Successfully saved data")
+        } catch {
+            debugPrint("Could not save: \(error.localizedDescription)")
+        }
+    }
     
+    func fetch() {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let fetchRequest = NSFetchRequest<Artist>(entityName: "Artist")
+        
+        do {
+            artists = try managedContext.fetch(fetchRequest)
+            print("💪🏻 Successfully fetched data")
+        } catch {
+            debugPrint("\(error.localizedDescription)")
+        }
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
