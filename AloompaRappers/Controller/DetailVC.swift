@@ -14,15 +14,35 @@ class DetailVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionLbl: UILabel!
     
-    var rapper = [Rapper]()
+    var rapper: Rapper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Selected Artist"
         
-        print(rapper)
-        artistNameLbl.text = rapper.first?.name
-        descriptionLbl.text = rapper.first?.description
+        print("RAPPER DETAILVC: \(rapper)")
+//        artistNameLbl.text = rapper.first?.name
+//        descriptionLbl.text = rapper.first?.description
+//        guard let url = URL(string: rapper.first!.image) else { return }
+        
+        artistNameLbl.text = rapper.name
+        descriptionLbl.text = rapper.description
+        guard let url = URL(string: rapper.image) else { return }
+        
+        print("URL: \(url)")
+        
+        do {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        self.imageView.image = UIImage(data: data)
+                    }
+                }
+            }
+            
+        } catch {
+            print("Failed to get data from url")
+        }
     }
     
 

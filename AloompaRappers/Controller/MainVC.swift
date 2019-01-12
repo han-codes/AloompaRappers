@@ -13,6 +13,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var rappers = [Rapper]()
+    var passedRapper: Rapper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,10 +61,12 @@ class MainVC: UIViewController {
         }.resume()
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == TO_DETAILVC {
             if let destinationVC = segue.destination as? DetailVC {
-                    destinationVC.rapper = self.rappers
+                destinationVC.rapper = passedRapper
             }
         }
         
@@ -86,12 +89,11 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          tableView.deselectRow(at: indexPath, animated: true)
         print(rappers[indexPath.row])
+        passedRapper = rappers[indexPath.row]
         
-        performSegue(withIdentifier: TO_DETAILVC, sender: rappers[indexPath.row])
+        performSegue(withIdentifier: TO_DETAILVC, sender: self)
     }
     
-    
-
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
