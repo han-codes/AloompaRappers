@@ -17,6 +17,10 @@
 		F324C0D921E9008F00B4FA6B /* Rapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C0D821E9008F00B4FA6B /* Rapper.swift */; };
 		F3EA7BB321E943C600DE3056 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EA7BB221E943C600DE3056 /* Constants.swift */; };
 		F3EA7BB521E943DB00DE3056 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EA7BB421E943DB00DE3056 /* DetailVC.swift */; };
+		F3EA7BB821EA59FC00DE3056 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EA7BB621EA59FC00DE3056 /* CustomCell.swift */; };
+		F3EA7BB921EA59FC00DE3056 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3EA7BB721EA59FC00DE3056 /* CustomCell.xib */; };
+		F3EA7BEF21EAA94E00DE3056 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EA7BED21EAA94E00DE3056 /* DetailView.swift */; };
+		F3EA7BF021EAA94E00DE3056 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3EA7BEE21EAA94E00DE3056 /* DetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		F324C0D821E9008F00B4FA6B /* Rapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rapper.swift; sourceTree = "<group>"; };
 		F3EA7BB221E943C600DE3056 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F3EA7BB421E943DB00DE3056 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		F3EA7BB621EA59FC00DE3056 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		F3EA7BB721EA59FC00DE3056 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		F3EA7BED21EAA94E00DE3056 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		F3EA7BEE21EAA94E00DE3056 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				F324C0D621E9003400B4FA6B /* RapperCell.swift */,
+				F3EA7BB621EA59FC00DE3056 /* CustomCell.swift */,
+				F3EA7BB721EA59FC00DE3056 /* CustomCell.xib */,
+				F3EA7BED21EAA94E00DE3056 /* DetailView.swift */,
+				F3EA7BEE21EAA94E00DE3056 /* DetailView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,7 +183,9 @@
 			files = (
 				F324C0CC21E8F60600B4FA6B /* LaunchScreen.storyboard in Resources */,
 				F324C0C921E8F60600B4FA6B /* Assets.xcassets in Resources */,
+				F3EA7BB921EA59FC00DE3056 /* CustomCell.xib in Resources */,
 				F324C0C421E8F60300B4FA6B /* Main.storyboard in Resources */,
+				F3EA7BF021EAA94E00DE3056 /* DetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,11 +197,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F324C0C121E8F60300B4FA6B /* MainVC.swift in Sources */,
+				F3EA7BEF21EAA94E00DE3056 /* DetailView.swift in Sources */,
 				F324C0D721E9003400B4FA6B /* RapperCell.swift in Sources */,
 				F324C0BF21E8F60300B4FA6B /* AppDelegate.swift in Sources */,
 				F324C0D921E9008F00B4FA6B /* Rapper.swift in Sources */,
 				F324C0C721E8F60300B4FA6B /* AloompaRappers.xcdatamodeld in Sources */,
 				F3EA7BB321E943C600DE3056 /* Constants.swift in Sources */,
+				F3EA7BB821EA59FC00DE3056 /* CustomCell.swift in Sources */,
 				F3EA7BB521E943DB00DE3056 /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -89,9 +89,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcM-W4-zJV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wcM-W4-zJV">
                                 <rect key="frame" x="67.5" y="224" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="RIb-Cx-2rN"/>
+                                    <constraint firstAttribute="height" constant="128" id="l5E-L2-SvK"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZp-A9-iMt">
                                 <rect key="frame" x="133.5" y="134" width="108" height="28"/>
@@ -99,9 +102,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P4-eF-jh0">
-                                <rect key="frame" x="44" y="396" width="287" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P4-eF-jh0">
+                                <rect key="frame" x="42.5" y="396" width="290" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="42b-dG-fC0"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing
  elit. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -113,6 +118,10 @@
                         <constraints>
                             <constraint firstItem="QZp-A9-iMt" firstAttribute="top" secondItem="XpN-0t-q6g" secondAttribute="top" constant="70" id="7Sq-r4-v7T"/>
                             <constraint firstItem="QZp-A9-iMt" firstAttribute="centerX" secondItem="Hkq-AD-SPA" secondAttribute="centerX" id="Qlf-An-d3o"/>
+                            <constraint firstItem="8P4-eF-jh0" firstAttribute="top" secondItem="wcM-W4-zJV" secondAttribute="bottom" constant="44" id="igr-IP-fZM"/>
+                            <constraint firstItem="wcM-W4-zJV" firstAttribute="top" secondItem="QZp-A9-iMt" secondAttribute="bottom" constant="62" id="mYe-Mo-B5D"/>
+                            <constraint firstItem="wcM-W4-zJV" firstAttribute="centerX" secondItem="Hkq-AD-SPA" secondAttribute="centerX" id="mar-87-aag"/>
+                            <constraint firstItem="8P4-eF-jh0" firstAttribute="centerX" secondItem="Hkq-AD-SPA" secondAttribute="centerX" id="nI9-8t-GaY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XpN-0t-q6g"/>
                     </view>

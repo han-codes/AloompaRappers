@@ -96,12 +96,13 @@ class MainVC: UIViewController {
 
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return artists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "rapperCell", for: indexPath) as? RapperCell else { return UITableViewCell() }
+        let cell = Bundle.main.loadNibNamed("CustomCell", owner: self, options: nil)?.first as! CustomCell
         cell.configureCell(artist: artists[indexPath.row])
         
         return cell
